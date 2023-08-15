@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+}
+:root{
+    /* Primary */
+    --SoftOrange: hsl(35, 77%, 62%);
+    --SoftRed: hsl(5, 85%, 63%);
+
+    /* Neutral */
+    --Off-white: hsl(36, 100%, 99%);
+   --GrayishBlue: hsl(233, 8%, 79%);
+    --DarkGrayishBlue: hsl(236, 13%, 42%);
+    --VeryDarkBlue: hsl(240, 100%, 5%);
+}
+body{
+    padding: 20px;
+    backdrop-filter: blur(10px);
+}
+header{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0;
+}   
+
+header .menu{
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+header .close{
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+header .hidden{
+    display: none;
+}
+.navbar{
+    display: none;
+}
+header .active{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 70px;
+    right: -20px;
+    list-style: none;
+    width: 250px;
+    height: 100vh;
+    background: var(--Off-white);
+    overflow: hidden;
+    padding: 0 20px;
+    transform: translateX(100%);
+    animation: moveleft 0.5s linear forwards;
+}
+@keyframes moveleft{
+    100%{
+        transform: translateX(0px);
+    }
+}
+
+header .off{
+    display: none;
+}
+
+
+header .active  li{
+    color: var(--VeryDarkBlue);
+    font-size: 1.3rem;
+    margin: 20px 0;
+}
+h1{
+    font-size: 2rem;
+    color: var(--VeryDarkBlue);
+    font-weight: 800;
+    padding: 10px 0;
+}
+.info-container p{
+    color: var(--DarkGrayishBlue);
+    line-height: 1.5rem;
+    padding-bottom: 10px;
+}
+.info-container button{
+    outline: 0;
+    border: 0;
+    color: var(--Off-white);
+    background: var(--SoftRed);
+    padding: 15px 25px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 5px;
+    margin: 10px 0;
+    transition: all 0.5s;
+}
+.info-container button:hover{
+    cursor: pointer;
+    background: var(--VeryDarkBlue);
+}
+aside{
+    background: var(--VeryDarkBlue);
+    padding: 20px;
+    margin: 40px 0;
+}
+aside div{
+    border-bottom: 1px solid var(--DarkGrayishBlue);
+    padding-bottom: 20px;
+}
+aside div:nth-child(4){
+    border: none;
+}
+aside h2{
+    color: var(--SoftOrange);
+    font-size: 1.6rem;
+}
+aside div h3{
+    color: var(--Off-white);
+    padding: 20px 0;
+    font-size: 1.2rem;
+    transition: all 0.5s;
+}
+aside div h3:hover{
+    cursor: pointer;
+    color: var(--SoftOrange);
+}
+aside div p{
+    color: var(--GrayishBlue);
+    line-height: 1.8rem;
+
+}
+footer div{
+    display: flex;
+    align-items: center;
+    margin: 40px 0;
+}
+footer div img{
+    width: 100px;
+}
+footer div article{
+    padding-left: 20px;
+    line-height: 1.5rem;
+}
+footer div article span{
+    color: var(--GrayishBlue);
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+footer div article h4{
+    font-weight: 800;
+    transition: all 0.5s;
+}
+footer div article h4:hover{
+    color: var(--SoftRed);
+    cursor: pointer;
+}
+footer div article p{
+    color: var(--DarkGrayishBlue);
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+@media (min-width: 700px){
+    header .active{
+        display: none;
+    }
+    header .navbar{
+        display: flex;
+        list-style: none;
+    }
+    header .navbar li{
+        margin: 0 20px;
+        color: var(--DarkGrayishBlue);
+        transition: all 0.5s;
+    }
+    header .navbar li:hover{
+        cursor: pointer;
+        color: var(--SoftRed);
+    }
+    header .menu{
+        display: none;
+    }
+    header .close{
+        display: none;
+    }
+    main{
+        display: grid;
+        grid-template-areas: "section section aside";
+    }
+    main section{
+        grid-area: section;
+        margin-right: 30px;
+    }
+    main aside{ 
+        grid-area: aside;
+        margin: 0;
+    }
+    main aside h2{
+        font-size: 2.5rem;
+    }
+    .article-container{
+        display: grid;
+        grid-template-areas: "article article";
+    }
+    .title-container{
+        display: flex;
+        align-items: center;
+        margin-left: 20px;
+    }
+    .title-container h1{
+        font-size: 3.3rem;
+        line-height: 3.1rem;
+    }
+    .info-container{
+        padding: 20px 0;
+    }
+    footer{
+        display: flex;
+    }
+    footer div{
+        margin-right: 20px;
+    }
+    footer div:nth-child(3){
+        margin: 0;
+    }
+}
+@media (min-width: 1200px){
+    body{
+        padding: 20px 50px; 
+    }
+}
